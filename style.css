@@ -2,7 +2,7 @@
   font-size: 12px;
   --veryDarkGreyBlue: hsl(237, 12%, 33%)
   --softRed: hsl(14, 88%, 65%);
-  --drakGreyBlue: Dark grayish blue: hsl(240, 6%, 50%);
+  --darkGreyBlue: Dark grayish blue: hsl(240, 6%, 50%);
   --lightGreyBlue: hsl(240, 5%, 91%);
 }
 
@@ -82,19 +82,63 @@ section {
     display: none;
 }
 
+.active > .answer{
+    display: block;
+    padding-bottom: 1.3rem;
+    color: var(--darkGreyBlue);
+}
+
 .image-wrapper{
     position: relative;
 }
 
 .image-wrapper-inner{
-    background: url(/images/illustration-woman-online-desktop.svg);
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position:120% center ;
+    position: absolute;
+    transform: translate(-20%, 15%);
 }
 
 .box {
     position: absolute;
     top: 42%;
     left: -25%;
+}
+
+.active img {
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in;
+}
+
+.active h3{
+    font-weight: 700;
+}
+
+@media screen and (max-width: 414px) {
+    section{
+        height: 140vh;
+    }
+    .accord-wrapper{
+        width: 325px;
+        height: 600px;
+        flex-direction: column;
+    }
+    .faq-wrapper{
+        flex: 5;
+        padding: 30px;
+    }
+    .faq-wrapper h1{
+        text-align: center;
+    }
+    .image-wrapper-inner{
+        transform: translate(15%, -60%);
+    }
+    .image-wrapper-inner img {
+        width: 250px;
+    }
+    .box {
+        width: 110px;
+        position: absolute;
+        top: -50%;
+        left: 10%;
+    }
+
 }
